@@ -26,6 +26,10 @@ public class Room {
         return false;
     }
 
+    public void showInfo(){
+        System.out.println("Room size: " + size +", temperature: " + temperature +", is air Conditioner ?" + airConditioner);
+    }
+
     public int getSize() { return size; }
     public double getTemperature() { return temperature; }
     public boolean isAirConditioner() { return airConditioner; }
