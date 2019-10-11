@@ -4,6 +4,7 @@ public class Room {
     private int size;
     private int temperature;
     private boolean airConditioner;
+    private double minTemp = 15;
 
     public Room(int size, int temperature, boolean airConditioner) {
         this(size,temperature);
@@ -16,14 +17,13 @@ public class Room {
     }
 
     public boolean roomTemperature(){
-        if (airConditioner){
+        if (airConditioner && temperature > minTemp){
             temperature--;
-        }else if (temperature <=15){
-            return false;
-        }else if (!airConditioner){
-            return false;
+            return true;
+        } else if (!airConditioner){
+                return false;
         }
-        return true;
+        return false;
     }
 
     public int getSize() { return size; }
